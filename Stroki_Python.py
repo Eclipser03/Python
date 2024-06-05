@@ -611,3 +611,198 @@ x = False
 # print(math.floor(5.7)) # округление всегда в меньшую сторону
 # print(math.trunc(54.748)) # обрезает знаки после точки оставляя только целое число # точно так же работает int(54.748)
 # print("pi =", math.pi) # число пи
+
+# print(
+#     divmod(5, 5),
+#     (5//5, 5%5),
+#     (math.floor(5/5), 5%5),
+# )
+# lst = [1, 3, 5, 7, 9]
+# print([divmod(x, 2) for x in lst])
+# [(0, 1), (1, 1), (2, 1), (3, 1), (4, 1)]
+
+# для разделения математических операций по приоритету используются круглые скобки
+# приоритет на примере
+# # 7   5   6   4   3     2     1
+# y = x + 7 > x + 2 * (x ** (3 ** x) )
+
+# Арифметическая прогрессия
+# a = int(input()) # 1  # 100
+# b = int(input()) # 1  # 50
+# c = int(input()) # 10 # 1
+# x = a + b * (c - 1)
+# print(x)
+
+# Геометрическая прогрессия
+# a = int(input()) # 1 # -2
+# b = int(input()) # 2 # 10
+# c = int(input()) # 5 # 3
+# x = a * b ** (c - 1)
+# print(x)
+
+# разделение числа посимвольно с помощью математических операторов, замена срезам/индексации строк
+# a = 1234
+# n1 = a // 1000 # для первой цифры можно не использовать остаток от деления
+# n2 = a // 100 % 10
+# n3 = a // 10 % 10
+# n4 = a // 1 % 10
+# print(n1, n2, n3, n4, sep='   ')
+
+# операции присваивания в пайтон
+# a += b прибавляем a к b (аналог a = a + b)
+# a -= b (аналог a = a - b)
+# a *= b (аналог a = a * b)
+# a /= b (аналог a = a / b)
+# a //= b (аналог a = a // b)
+# a %= b (аналог a = a % b)
+# a &= b (аналог a = a & b)
+# a |= b (аналог a = a | b)
+
+# программа открывающая сайт https://www.youtube.com
+# input не пропускает цикл пока пользователь не введёт какие либо данные
+# import os
+# while True :
+# 	sayt = input("Введите адрес сайта:\n")
+# 	if sayt == "завершить" :
+# 		break
+# 	if "https://" in sayt :
+# 		os.system("start " + sayt)
+# 		print("if")
+# 	elif "www." in sayt :
+# 		sayt = "https://" + sayt
+# 		os.system("start " + sayt)
+# 		print("elif")
+# 	else :
+# 		sayt = "https://www." + sayt
+# 		os.system("start " + sayt)
+# 		print("else")
+
+# import time
+# import os
+# time.sleep(3)
+# os.system("start https://www.youtube.com")
+# time.sleep(3)
+# os.system("start https://www.twitch.tv")
+# time.sleep(3)
+# os.startfile("C:\Program Files\CPUID\CPU-Z\cpuz.exe")
+
+# полностью очистить терминал
+# import os
+# os.system('cls') # для windows
+# os.system('clear') # для linux/mac
+
+# модуль рандом
+# import random
+# print(random.randint(0, 0xFFFFFF))
+# print(random.randint(0, 100)) # выбрать рандомный элемент из диапазона
+# print(random.randrange(1, 100)) # выбрать рандомный элемент из range
+# # выбрать рандомный элемент из коллекции
+# print(random.choice(['Lorem', 'ipsum', 'dolor', 'sit', 'amet,', 'consectetur', 'adipiscing', 'elit']))
+# lst = list(range(1, 10))
+# print(lst)
+# random.shuffle(lst) # перемешать элементы в коллекции
+# print(lst)
+
+# while оператор цикла исполняется (пока условие верно)
+# цикл от 1 до 5
+# можно подключить оператор else который сработает по завершению цикла
+# a = 0
+# while a < 5 :
+# 	a += 1
+# 	print(a)
+# else :
+# 	print("finish")
+
+# while True :
+# 	a = int(input())
+# 	b = 1
+# 	count = 0
+# 	while count < a :
+# 		count += 1
+# 		b *= count
+# 	else :
+# 		print("result:", b)
+
+# while True :
+# 	a = ""
+# 	while len(a) < 5 :
+# 		b = input("Ввод данных: ")
+# 		if b == "o" :
+# 			continue # игнорируем символ
+# 		if b == "t" :
+# 			break # прерываем цикл
+# 		a += b
+# 	else :
+# 		print("result:", a)
+# 	print(">>> Сброс программы <<<")
+
+
+# def _len(x):
+#     print(_len.__name__, x)
+#     return len(x)
+
+# # в условии цикла while не стоит использовать вызываемые объекты т.к. они будут выполнены на каждой итерации
+# L = [1, 2, 3]
+# while _len(L) < 5:
+#     pass
+
+
+# цикл for
+
+# basket = [1,2,3,4,5,6]
+# # спискам в цикле можно применять метод среза тем самым укоротив цикл до 3 итераций
+# for i in basket[:3]:
+#     print(i)
+
+# можно подключить оператор else который сработает по завершению цикла
+# ищем конкретные символы
+# a = "test text"
+# count = 0
+# for i in a :
+# 	if i == "t" :
+# 		print("найдено совпадение:", i)
+# 		count += 1
+# 	if i == "x" :
+# 		break
+# else :
+# 	print("result:", i, "=", count)
+
+# пропускаем символы
+# a = "test text"
+# count = 0
+# for i in a :
+# 	if i == "t" :
+# 		continue
+# 	print(i)
+# else :
+# 	print("result:", i, "=", count)
+
+# подсчёт количества повторяющихся символов
+# while True :
+# 	a = "йцукенгшщзхъфывапролджэячсмитьбю0123456789"
+# 	b = input("Введите строку:\n")
+# 	for i in a :
+# 		count = 0
+# 		for index in b :
+# 			if i == index :
+# 				count += 1
+# 		if count > 0 :
+# 			# idk :D
+# 			if count == 2 or count == 3 or count == 4 or count == 22 or count == 23 or count == 24 :
+# 				name = "раза"
+# 			else :
+# 				name = "раз"
+# 			print("буква", '"' + i + '"', "попалась", count, name)
+
+# функция range принимает аргументы (start, end, step)
+# for i in range(3, 16, 2) :
+# 	print(i)
+
+# for i in range(10, -1, -1): # обратная последовательность от 10 до 0
+#     print(i)
+# либо так
+# for i in range(11)[::-1]:
+#     print(i)
+
+# for i in range(-10, 0): # отрицательная последовательность от -10 до -1
+#     print(i)
